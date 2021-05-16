@@ -8,9 +8,12 @@ const text = process.argv.slice(2).join("");
 
 //Check the text 
 const code = franc(text);
-
+if(code === 'und') {
+    console.log("sorry couldn't figure it out");
+}else{
 //Use this 3 letter code to fetch the langauge name
 const langName = langs.where("3", code);
 
 //Print the lang name
 console.log(langName.name);
+}
